@@ -1,0 +1,181 @@
+//
+//  LStar.pch
+//  LStar
+//
+//  Created by yons on 16/8/15.
+//  Copyright © 2016年 於建光. All rights reserved.
+//
+
+#ifndef WKP_pch
+#define WKP_pch
+#import <UIKit/UIKit.h>
+#import "WKPHttpRequest.h"
+#import "SVProgressHUD.h"
+#import "Masonry.h"
+//背景色
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define SCREEN_FRAME [UIScreen mainScreen].bounds
+#define WKPColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define WKPRColor(r,g,b,d) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(d)]
+#define HeightSale 9.0/16
+#define WKPProportion 414/[UIScreen mainScreen].bounds.size.width
+#define localImg(img) [UIImage imageNamed:img]
+#define BLUE [UIColor colorWithHexString:@"#1296db"]
+#define weekArry  @[@"周一",@"周二",@"周三",@"周四",@"周五",@"周六",@"周日"]
+#define WKPSP [UIScreen mainScreen].bounds.size.width/414
+#define  is_IPhone_X SCREEN_HEIGHT == 812
+#pragma mark 接口
+/**域名头*/
+#define WKPhttpHeader @"http://gxhy.vkepai.com/?api/"
+
+/**是否开启会员*/
+#define WKPOnOff @"onOff"
+
+/**域名尾*/
+#define WKPhttpTail @"/0d5af69794d4646e15b6676777f997/1/"
+
+/**上传图片*/
+#define UpLoadImg @"uploadimg"
+
+/**提交资质*/
+#define AddNewShop @"addnewshop"
+
+/**添加产品*/
+#define AddShopProduct @"addshopproduct"
+
+/**修改产品信息*/
+#define EditShopProduct @"editshopproduct"
+
+/**获取商家职位列表*/
+#define WKPGetshopjoblist @"getshopjoblist"
+
+
+/**获取商圈列表*/
+#define WKPGetAreaStreet @"getAreaStreet"
+
+
+/**获取商家成员列表*/
+#define WKPListShopMember @"listShopMember"
+
+/**删除商家成员*/
+#define WKPDeleteShopMember @"deleteShopMember"
+
+/**获取省市区*/
+#define WKPListArea @"listArea"
+
+/**获取商店状态*/
+#define WKPGetShopInforByMid @"getShopInforByMid"
+
+/**获取商店数据*/
+#define WKGetusershopinfo @"getusershopinfo"
+
+/**获取商店成员详细数据*/
+#define WKPGetShopMemberInfo @"getShopMemberInfo"
+
+/**获取银行卡列表*/
+#define WKPGetMyCardList @"getMyCardList"
+
+/**添加银行卡*/
+#define WKPAddMyCard @"addMyCard"
+
+/**获取银行列表*/
+#define WKPGetBankList @"getBankList"
+
+/**修改商店数据*/
+#define WKEditusershop @"editusershop"
+
+/**获取商家职位列表*/
+#define WKPGetshopmenu @"getshopmenu"
+
+/**获取产品*/
+#define WKPGetshopproductlist @"getshopproductlist"
+
+/**获取店铺会员*/
+#define WKPListShopAllVIPInfo @"listShopAllVIPInfo"
+
+/**获取会员卡模版**/
+#define Get_VIP_Sample_URL @"getrechargecardtemp"
+
+/**设置店铺会员卡**/
+#define Add_VIPData_Background_URL @"setshoprechargecard"
+
+/**添加商家职位*/
+#define WKPAddshopjob @"addshopjob"
+
+/**修改商家职位*/
+#define WKPEditshopjob @"editshopjob"
+
+/**添加店铺成员*/
+#define WKPAddShopMember @"addShopMember"
+
+/**删除店铺产品*/
+#define WKPDelshopproduct @"delshopproduct"
+
+/**删除店铺优惠*/
+#define WKPDelshopcoupon @"delshopcoupon"
+
+/**获取消息列表*/
+#define WKPGetshopmessage @"getshopmessage"
+
+/**获取行业*/
+#define WKPGetindustryall @"getindustryall"
+
+/**修改店铺信息*/
+#define WKPEditusershop @"editusershop"
+
+/**获取订单*/
+#define WKPListShopOrderInfo @"listShopOrderInfo"
+
+/**编辑商家成员信息*/
+#define WKPEditShopMember @"editShopMember"
+
+/**验证码登录*/
+#define WKPLoginSmsCode @"loginSmsCode"
+
+/**登录*/
+#define WKPLogin @"login"
+
+/**提现*/
+#define WKPaskForDrawMoney @"askForDrawMoney"
+/**获取提现或收入明细*/
+#define WKPGetshopmoneyrecord @"getshopmoneyrecord"
+
+
+/**获取我的钱包*/
+#define WKPGetshopwalletinfo @"getshopwalletinfo"
+
+/**获取店铺二维码*/
+#define WKPGetusershopqr @"getusershopqr"
+
+/**验证码*/
+#define WKPCode @"sendsmscode"
+
+/**添加兑换券*/
+#define WKPAddShopCoinCertificate @"addShopCoinCertificate"
+/**找回密码*/
+#define     WKPResetpassword      @"resetpassword"
+
+/**意见反馈*/
+#define WKPUserfeedback @"userfeedback"
+
+/**修改密码*/
+#define WKPEdituserpsw @"edituserpsw"
+
+/**获取消费过得用户*/
+#define WKPGetconsumeuserlist @"getconsumeuserlist"
+
+/**获取店铺优惠券*/
+#define WKPListShopCoupon @"listShopCoupon"
+
+/**获取店铺兑换券*/
+#define WKPListShopCoinCertificate @"listShopCoinCertificate"
+
+/**添加店铺优惠券*/
+#define WKPAddShopCoupon @"addShopCoupon"
+
+/**注册*/
+#define     WKPRegister      @"register"
+//#define KDefaultPlaceImageName [UIImage imageNamed:@"icc3"]
+
+#endif /* LStar_pch */
